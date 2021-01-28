@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Ornament
   - Hazards
   - Player
-  - 
+  - Ground
   - 
   - 
   - 
@@ -44,9 +45,6 @@ TagManager:
   - name: Background
     uniqueID: 110425257
     locked: 0
-  - name: Foreground
-    uniqueID: 3109841723
-    locked: 0
   - name: Ornament
     uniqueID: 2950857625
     locked: 0
@@ -55,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2803848509
+    locked: 0
+  - name: Foreground
+    uniqueID: 3109841723
     locked: 0
