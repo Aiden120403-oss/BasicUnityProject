@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Hazards
   - Player
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -51,9 +52,12 @@ TagManager:
   - name: Hazards
     uniqueID: 3510718715
     locked: 0
+  - name: Ground
+    uniqueID: 3109841723
+    locked: 0
+  - name: Enemy
+    uniqueID: 1155295439
+    locked: 0
   - name: Player
     uniqueID: 2803848509
-    locked: 0
-  - name: Foreground
-    uniqueID: 3109841723
     locked: 0

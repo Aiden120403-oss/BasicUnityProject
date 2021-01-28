@@ -7,11 +7,16 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
+
+    //State
+    bool isAlive = true;
 
     //Cache Component reference
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     BoxCollider2D myFeet;
+    CapsuleCollider2D myBodyCollider2D;
 
 
     // Message then Methods
@@ -19,15 +24,21 @@ public class Player : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        myBodyCollider2D = GetComponent<CapsuleCollider2D>();
         myFeet = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
         Run();
         Jump();
         FlipSprite();
+        Die();
     }
 
     private void Run()
@@ -55,9 +66,18 @@ public class Player : MonoBehaviour
         
     }
 
+    private void Die()
+    {
+        if (myBodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("Die");
+            GetComponent<Rigidbody2D>().velocity = deathKick;
+        }
+    }
+
     private void FlipSprite()
     {
-
         bool playerHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
         if (playerHorizontalSpeed)
         {
