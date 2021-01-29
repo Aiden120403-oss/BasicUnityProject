@@ -22,7 +22,7 @@ TagManager:
   - Player
   - Ground
   - Enemy
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -60,4 +60,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2803848509
+    locked: 0
+  - name: Interactables
+    uniqueID: 2177143127
     locked: 0
