@@ -23,7 +23,7 @@ TagManager:
   - Ground
   - Enemy
   - Interactables
-  - 
+  - Button
   - 
   - 
   - 
@@ -63,4 +63,7 @@ TagManager:
     locked: 0
   - name: Interactables
     uniqueID: 2177143127
+    locked: 0
+  - name: Button
+    uniqueID: 3737009877
     locked: 0
